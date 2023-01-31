@@ -23,6 +23,15 @@ var _dbcontext = builder.Services.BuildServiceProvider().GetService<DbTodoContex
 
 builder.Services.AddSignalR();
 
+builder.Services.AddCors(options =>
+    {
+        options.AddDefaultPolicy(builder =>
+        {
+            builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        });
+    });
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,5 +48,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapHub<TodoHub>("/todos");
+app.UseCors();
+
+
 
 app.Run();

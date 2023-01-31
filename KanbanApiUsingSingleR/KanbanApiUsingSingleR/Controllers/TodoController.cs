@@ -17,14 +17,17 @@ namespace KanbanApiUsingSingleR.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTodo(Todo todo)
+        public async Task<IActionResult> AddTodo([FromBody]Todo todo)
         {
-            // Save the todo to the database
-            // ...
-            // Notify all clients about the new todo
-            await _todoHub.Clients.All.SendAsync("TodoAdded", todo);
+            try
+            {
+                await _todoHub.Clients.All.SendAsync("AddTodoHere", todo);
 
-            return Ok();
+                return Ok();
+            }catch(Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
     }
 }

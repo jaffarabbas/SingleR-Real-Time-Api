@@ -1,0 +1,10 @@
+<h1>Todo</h1>
+
+<div *ngFor="let todo of todos">
+  {{ todo.name }}
+  {{ todo.description }}
+</div>
+
+<input [(ngModel)]="newTodoName" /><br />
+<input [(ngModel)]="newTodoDescription" /><br />
+<button (click)="addTodo()">Add</button>

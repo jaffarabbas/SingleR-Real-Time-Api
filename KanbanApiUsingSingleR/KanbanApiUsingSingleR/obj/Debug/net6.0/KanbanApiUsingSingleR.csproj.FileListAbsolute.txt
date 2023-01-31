@@ -89,3 +89,9 @@ J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\obj\
 J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\obj\Debug\net6.0\KanbanApiUsingSingleR.pdb
 J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\obj\Debug\net6.0\KanbanApiUsingSingleR.genruntimeconfig.cache
 J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\obj\Debug\net6.0\ref\KanbanApiUsingSingleR.dll
+J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\bin\Debug\net6.0\System.Web.Cors.dll
+J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\bin\Debug\net6.0\System.Web.Http.dll
+J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\bin\Debug\net6.0\System.Web.Http.Cors.dll
+J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\bin\Debug\net6.0\Newtonsoft.Json.dll
+J:\GitHub\SingleR-Real-Time-Api\KanbanApiUsingSingleR\KanbanApiUsingSingleR\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

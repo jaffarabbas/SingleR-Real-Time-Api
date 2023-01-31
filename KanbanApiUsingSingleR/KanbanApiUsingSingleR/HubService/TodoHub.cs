@@ -9,20 +9,18 @@ namespace KanbanApiUsingSingleR.HubService
         public TodoHub(DbTodoContext context) { 
             _context = context;
         }
-        public async Task AddTodo(TodoDtos todo)
+        public async Task AddTodoHere(TodoDtos todo)
         {
             // Save the todo to the database
             // ...
-            if(todo != null) {
-                var result = new Todo() 
-                {
-                    Name = todo.Name,
-                    Description= todo.Description,
-                };
-                await _context.SaveChangesAsync();
-            }
+            var result = new Todo()
+            {
+                Name = todo.Name,
+                Description = todo.Description,
+            };
+            await _context.SaveChangesAsync();
+            await Clients.All.SendAsync("AddTodoHere", result);
             // Notify all clients about the new todo
-            await Clients.All.SendAsync("TodoAdded", todo);
         }
     }
 }
