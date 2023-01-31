@@ -1,4 +1,5 @@
-﻿using KanbanApiUsingSingleR.HubService;
+﻿using KanbanApiUsingSingleR.Dtos;
+using KanbanApiUsingSingleR.HubService;
 using KanbanApiUsingSingleR.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,14 +17,24 @@ namespace KanbanApiUsingSingleR.Controllers
             _todoHub= todoHub;
         }
 
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var r = _todoHub.Clients.All.SendAsync("Get");
+            return Ok(r);
+        }
+
         [HttpPost]
-        public async Task<IActionResult> AddTodo([FromBody]Todo todo)
+        public IActionResult AddTodo([FromBody]TodoDtos todo)
         {
             try
             {
-                await _todoHub.Clients.All.SendAsync("AddTodoHere", todo);
-
-                return Ok();
+                var result = _todoHub.Clients.All.SendAsync("AddTodoHere", todo);
+                if(result != null)
+                {
+                    return Ok(todo);
+                }
+                return BadRequest();
             }catch(Exception ex)
             {
                 return BadRequest(ex);
