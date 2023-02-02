@@ -25,11 +25,11 @@ namespace KanbanApiUsingSingleR.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddTodo([FromBody]TodoDtos todo)
+        public IActionResult AddTodo([FromBody]Todo todo)
         {
             try
             {
-                var result = _todoHub.Clients.All.SendAsync("AddTodoHere", todo);
+                var result = _todoHub.AddTodoHere(todo);
                 if(result != null)
                 {
                     return Ok(todo);

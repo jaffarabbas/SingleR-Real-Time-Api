@@ -27,7 +27,9 @@ namespace KanbanApiUsingSingleR.HubService
             Console.WriteLine("**************************************************************");
             _context.Todos.Add(result);
             var data = await _context.SaveChangesAsync();
-            return data != null ? todo : null;
+            var r = data != null ? todo : null;
+            await Clients.All.SendAsync("AddTodoHere",r);
+            return r;
             // Notify all clients about the new todo
         }
     }
